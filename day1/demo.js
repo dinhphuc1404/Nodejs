@@ -224,26 +224,20 @@
 //     document.write("So tien ban nhan duoc la: "+luongrong);
 
 //bai 12
-let soTien =parseFloat(prompt('Nhập số tiền cho vay '));
-    let soThang =parseInt(prompt('Nhập số tháng cho vay '));
-    let thang1 = 3.65, thang3 = 4 , thang6 =5.6, thang12 = 5.7 ,thang18=6,thang24=6,thang36=6.3;
-
-    if (isNaN(soTien) ||isNaN(soThang) || soTien < 0 || soThang < 0 ){
-        document.writeln("Bạn nhập  không hợp lệ");
-    }else{
-        if (soThang == 1 ){
-            document.writeln("Tổng lãi và tiền gửi 1 tháng :"+soTien*thang1);
-        }else if(soThang == 3){
-            document.writeln("Tổng lãi và tiền gửi 3 tháng :"+soTien*thang3);
-        }else if(soThang == 3){
-            document.writeln("Tổng lãi và tiền gửi 6 tháng :"+soTien*thang6);
-        }else if(soThang == 3){
-            document.writeln("Tổng lãi và tiền gửi 12 tháng :"+soTien*thang12);
-        }else if(soThang == 3){
-            document.writeln("Tổng lãi và tiền gửi 18 tháng :"+soTien*thang18);
-        }else if(soThang == 3){
-            document.writeln("Tổng lãi và tiền gửi 24 tháng :"+soTien*thang24);
-        }else {
-            document.writeln("Tổng lãi và tiền gửi những tháng còn lại :"+soTien*thang36);
-        }
-    }
+var soTienBanDau = parseFloat(prompt("Nhập số tiền ban đầu:"));
+var soThangChoVay = parseInt(prompt("Nhập số tháng cho vay:"));
+var laiXuatHangThang = parseFloat(prompt("Nhập lãi xuất hàng tháng (%):"));
+laiXuatHangThang = laiXuatHangThang / 100;
+var tongTienLai = 0;
+var tongTienThuVe = soTienBanDau;
+for (var thang = 1; thang <= soThangChoVay; thang++) {
+  var tienLaiThang = tongTienThuVe * laiXuatHangThang;
+  tongTienLai += tienLaiThang;
+  tongTienThuVe += tienLaiThang;
+}
+var tongSoTien = soTienBanDau + tongTienLai;
+document.writeln("Số tiền ban đầu: " + soTienBanDau.toFixed(2) +"<br>");
+document.writeln("Số tháng cho vay: " + soThangChoVay +"<br>");
+document.writeln("Lãi xuất hàng tháng: " + (laiXuatHangThang * 100) + "%" +"<br>");
+document.writeln("Tổng số tiền lãi: " + tongTienLai.toFixed(2) +"<br>");
+document.writeln("Tổng số tiền sau kỳ hạn: " + tongSoTien.toFixed(2) +"<br>");
