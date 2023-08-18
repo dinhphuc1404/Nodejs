@@ -189,7 +189,7 @@
 
 // bài 7
 // function swapIntegers(a, b) {
-//     const temp = a;
+//     let temp = a;
 //     a = b;
 //     b = temp;
 //     return [a, b];
@@ -219,10 +219,10 @@
 
 // bài 9
 function countCharacterOccurrences(arr, character) {
-    const occurrences = arr.filter(char => char === character);
+    let occurrences = arr.filter(char => char === character);
     return occurrences.length > 0 ? occurrences.length : -1;
   }
-  const characters = ['a', 'b', 'c', 'a', 'd', 'e', 'a'];
+  let characters = ['a', 'b', 'c', 'a', 'd', 'e', 'a'];
   let targetChar = 'a';
   let occurrenceCount = countCharacterOccurrences(characters, targetChar);
   if (occurrenceCount !== -1) {
