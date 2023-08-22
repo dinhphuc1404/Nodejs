@@ -74,7 +74,7 @@
 //   }
 // bài 7
 // let arr = [1,2,3,4,5,11,12,13,88,78];
-// let V = 78;
+// let V = 2;
 // function removeValueFromArray(arr, value) {
 //     let found = false;
 //     let lastIndex = -1;
@@ -91,7 +91,7 @@
 //     }
   
 //     if (found) {
-//       arr[lastIndex] = 0;
+//       arr[arr.length -1] = 0;
 //     }
   
 //     return found;
