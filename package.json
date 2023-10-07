@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "mongoose": "^7.5.0",
+    "mongose": "0.0.2-security",
+    "qs": "^6.11.2",
+    "socket.io": "^4.7.2"
+  }
+}
